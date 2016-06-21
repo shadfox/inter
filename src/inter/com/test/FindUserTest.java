@@ -22,19 +22,9 @@ public class FindUserTest {
     public void loadJsonFile() {
     	try {
             assertTrue("The file has been loaded sucessfully", 
-            		FindUser.getUsers(FILE_PATH, 100).size() == 16);
+            		FindUser.getUsers(FILE_PATH, 100).size() > 0);
         } catch (FileNotFoundException e) {
             fail("No file was found");
-        }
-    }
-	
-	@Test
-    public void failtLoadJsonFile() {
-    	try {
-            assertFalse("The file shouldn't be loading.", 
-            		FindUser.getUsers("", 100).size() > 0);
-        } catch (FileNotFoundException e) {
-            assertTrue("No file was found", true);
         }
     }
 	
