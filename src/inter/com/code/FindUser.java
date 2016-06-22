@@ -88,7 +88,7 @@ public class FindUser {
      * @param distance the distance of the users
      * @return       the list of user within the distance passed by param
      */
-    public static ArrayList<String[]> getUsers(String file, double distance)
+    public static ArrayList<User> getUsers(String file, double distance)
             throws FileNotFoundException {
 
     	// User list
@@ -103,7 +103,7 @@ public class FindUser {
     	Collections.sort(userList, comparator);
     	
     	// Creating the user list by distance
-    	ArrayList<String[]> userIdList = new ArrayList<>();
+    	ArrayList<User> userIdList = new ArrayList<>();
         
     	// For each user it calculates the distance
     	for (User user : userList) {
@@ -112,7 +112,7 @@ public class FindUser {
     		if (getDistanceFromOffice(user) <= distance) {
     			
     			// Add the user in the list
-    			userIdList.add(new String[]{String.valueOf(user.getUser_id()), user.getName()});
+    			userIdList.add(user);
     			
     			// Printing users
     			System.out.println(user.toString());
@@ -136,6 +136,17 @@ public class FindUser {
                    Math.sin(lngDistance/2) * Math.sin(lngDistance/2);
         return EARTH_RADIUS * (2 * Math.atan2(Math.sqrt(arccos), Math.sqrt(1-arccos)));
         
+    }
+    
+    /*
+     * Print a list of users
+     * @param users the list of users to be printed
+     */
+    public static void printUsers(ArrayList<User> users) {
+    	
+    	for (User user : users) {
+			System.out.println(user.toString());
+    	}
     }
     
 }

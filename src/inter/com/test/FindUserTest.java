@@ -1,10 +1,12 @@
 package inter.com.test;
 
 import inter.com.code.FindUser;
+import inter.com.code.User;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -31,7 +33,12 @@ public class FindUserTest {
 	@Test
     public void checkDistances() {
     	try {
-    		ArrayList<String[]> list = FindUser.getUsers(FILE_PATH, 100);
+    		ArrayList<User> list = FindUser.getUsers(FILE_PATH, 100);
+    		FindUser.printUsers(list);
+    		assertThat(list.get(0).toString(), 
+    				CoreMatchers.containsString("ID:"));
+    		assertThat(list.get(0).toString(), 
+    				CoreMatchers.containsString("Name:"));
             assertTrue(list.size() == 16);
             System.out.println("-----------");
             
@@ -41,10 +48,12 @@ public class FindUserTest {
             System.out.println("-----------");
     		
     		list = FindUser.getUsers(FILE_PATH, 40);
+    		FindUser.printUsers(list);
     		assertTrue(list.size() == 5);
     		System.out.println("-----------");
     		
     		list = FindUser.getUsers(FILE_PATH, 80);
+    		FindUser.printUsers(list);
     		assertTrue(list.size() == 10);
     		System.out.println("-----------");
             
