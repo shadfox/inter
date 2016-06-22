@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Thiago Amanajás on 21/06/16.
  *
- * This class is used to test the FlatArray code.
+ * This class is used to test the FindUser code.
  */
 public class FindUserTest {
 

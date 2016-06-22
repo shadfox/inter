@@ -13,6 +13,15 @@ public class User {
 	private double latitude;
 	private double longitude;
 	
+	/**
+	 * This class is used to save information 
+	 * about the user
+	 * 
+	 * @param id
+	 * @param name
+	 * @param latitude
+	 * @param longitude
+	 */
 	public User (int id, String name, double latitude, double longitude) {
 		
 		this.user_id = id;
