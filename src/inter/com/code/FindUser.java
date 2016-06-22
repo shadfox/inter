@@ -113,9 +113,6 @@ public class FindUser {
     			
     			// Add the user in the list
     			userIdList.add(user);
-    			
-    			// Printing users
-    			System.out.println(user.toString());
     		}
     	}
 
