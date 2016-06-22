@@ -5,11 +5,8 @@ import inter.com.code.User;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
