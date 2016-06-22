@@ -138,7 +138,7 @@ public class FindUser {
         
     }
     
-    /*
+    /**
      * Print a list of users
      * @param users the list of users to be printed
      */

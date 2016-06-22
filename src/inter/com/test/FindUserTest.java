@@ -20,6 +20,10 @@ public class FindUserTest {
 	// File path to be used in the tests
 	public static final String FILE_PATH = "./json/gistfile1.txt";
 	
+	/**
+	 * Load the user list file.
+	 * @result the file will be loaded without any errors.
+	 */
 	@Test
     public void loadJsonFile() {
     	try {
@@ -30,6 +34,13 @@ public class FindUserTest {
         }
     }
 	
+	/**
+	 * Check the user distances
+	 * @result after load the file this method checks if the amount 
+	 *         of users matches with the amount expected for that
+	 *         distance, and also if it is printing the results that contains
+	 *         id and name.
+	 */
 	@Test
     public void checkDistances() {
     	try {

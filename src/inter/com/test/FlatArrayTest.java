@@ -13,9 +13,14 @@ import static org.junit.Assert.*;
  */
 public class FlatArrayTest {
 
-
+	/**
+	 * Check the flatten arrays
+	 * @result  Creates many arrays containing integers and other arrays,
+	 *          and after the execution of the flatten method verifies
+	 *          if the array is flat. 
+	 */
     @Test
-    public void checkFlatten() throws Exception {
+    public void checkFlatten() {
         Object[] tester1 = new Object[]{0, 1, new Object[]{1, new Object[]{4, 5, 6}, 0, 2}, 4};
         Object[] tester2 = new Object[]{2, 3, new Object[]{2, 1, 3}, 5, new Object[]{2, null, 3}};
         Object[] tester3 = new Object[]{3, 4, new Object[]{3, null, 4}, 6};
@@ -31,6 +36,12 @@ public class FlatArrayTest {
         assertArrayEquals(new Object[]{0}, FlatArray.getFlatten(tester6));
     }
 
+    /**
+	 * Check for exceptions
+	 * @result  Verifies if the flatten method is prepared to 
+	 *          receive null objects instead array. The method
+	 *          must throw a exception.
+	 */
     @Test
     public void failFlatten() {
         try{
