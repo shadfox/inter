@@ -5,8 +5,11 @@ import inter.com.code.User;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -43,14 +46,17 @@ public class FindUserTest {
 	 */
 	@Test
     public void checkDistances() {
+		
+		//Pattern
+		String pat = "ID: (.*?), Name: (.*)$";		
+		
     	try {
+    		// Getting users within 100km
     		ArrayList<User> list = FindUser.getUsers(FILE_PATH, 100);
     		FindUser.printUsers(list);
-    		assertThat(list.get(0).toString(), 
-    				CoreMatchers.containsString("ID:"));
-    		assertThat(list.get(0).toString(), 
-    				CoreMatchers.containsString("Name:"));
-            assertTrue(list.size() == 16);
+    		assertTrue(Pattern.matches(pat, list.get(0).toString()));
+    		assertTrue(list.size() == 16);
+    		//------------------------------
             System.out.println("-----------");
             
             list = FindUser.getUsers(FILE_PATH, -200);
